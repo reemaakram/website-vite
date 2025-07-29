@@ -1,45 +1,14 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Library from "./Library";
-import Users from "./Users";
-import Landmarks from "./Landmarks";
+import Navbar from "./components/Navbar"; 
+import Library from "./pages/Library";
+import Users from "./pages/Users";
+import Landmarks from "./pages/Landmarks";
 
 const App = () => (
   <Router>
-    <nav style={{ background: "#333", padding: 10 }}>
-      <NavLink
-        to="/Library"
-        style={({ isActive }) => ({
-          color: isActive ? "#88f38bff" : "white",
-          marginRight: 15,
-          textDecoration: "none",
-        })}
-      >
-        Library
-      </NavLink>
-      <NavLink
-        to="/Users"
-        style={({ isActive }) => ({
-          color: isActive ? "#88f38bff" : "white",
-          marginRight: 15,
-          textDecoration: "none",
-        })}
-      >
-        Users
-      </NavLink>
-      <NavLink
-        to="/Landmarks"
-        style={({ isActive }) => ({
-          color: isActive ? "#88f38bff" : "white",
-          textDecoration: "none",
-        })}
-      >
-        Landmarks
-      </NavLink>
-    </nav>
-
-    {}
+    <Navbar />
     <div style={{ padding: 20, maxWidth: 700, margin: "auto" }}>
       <Routes>
         <Route path="/Library" element={<Library />} />
